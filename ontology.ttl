@@ -1,0 +1,472 @@
+@prefix : <http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/> .
+
+<http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology> rdf:type owl:Ontology ;
+                                                                                  <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                                                                  rdfs:comment "Ontology about feedback from passengers who have flown with different airlines, covering passenger, flight and ratings details." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasAircraft
+:hasAircraft rdf:type owl:ObjectProperty ;
+             rdfs:domain :Trip ;
+             rdfs:range :Aircraft ;
+             rdfs:comment "hasAircraft object property" ;
+             rdfs:label "hasAircraft" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasAirlaine
+:hasAirlaine rdf:type owl:ObjectProperty ;
+             rdfs:domain :Trip ;
+             rdfs:range :Airlane ;
+             rdfs:comment "hasAirline object property" ;
+             rdfs:label "hasAirline" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasPassenger
+:hasPassenger rdf:type owl:ObjectProperty ;
+              rdfs:domain :Review ;
+              rdfs:range :Passenger ;
+              rdfs:comment "hasPassenger object property" ;
+              rdfs:label "hasPassenger" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasTrip
+:hasTrip rdf:type owl:ObjectProperty ;
+         rdfs:domain :Review ;
+         rdfs:range :Trip ;
+         rdfs:comment "hasTrip object property" ;
+         rdfs:label "hasTrip" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasComment
+:hasComment rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Review ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Comment of a review" ;
+            rdfs:label "hasComment" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasRating
+:hasRating rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Review ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "Rating of a review" ;
+           rdfs:label "hasRating" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Review ;
+          rdfs:range xsd:boolean ;
+          rdfs:comment "Indicates if the passenger recommends or not the airline in the review" ;
+          rdfs:label "isRecommended" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/isRecommended
+:isRecommended rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Review ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Title of a review" ;
+               rdfs:label "hasTitle" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/isVerified
+:isVerified rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Trip ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Indicates if the trip is verified or not" ;
+            rdfs:label "isVerified" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/laia.subirats/ontologies/2021/2/toy-tennis-ontology#Average
+<http://www.semanticweb.org/laia.subirats/ontologies/2021/2/toy-tennis-ontology#Average> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :Rating ;
+                                                                                         rdfs:comment "Rating is good" ;
+                                                                                         rdfs:label "GoodRating" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Aircraft
+:Aircraft rdf:type owl:Class ;
+          rdfs:comment "Aircraft used in the trip" ;
+          rdfs:label "Aircraft" ;
+          rdfs:sameAs "https://dbpedia.org/page/Airline" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Airlane
+:Airlane rdf:type owl:Class ;
+         rdfs:comment "Company that provided the flight" ;
+         rdfs:label "Airline" ;
+         rdfs:sameAs "https://dbpedia.org/page/Airline" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/AverageRating
+:AverageRating rdf:type owl:Class ;
+               rdfs:subClassOf :Rating ;
+               rdfs:comment "Average rating" ;
+               rdfs:label "AverageRating" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Business
+:Business rdf:type owl:Class ;
+          rdfs:subClassOf :TravellerType ;
+          rdfs:comment "Business" ;
+          rdfs:isDefinedBy "Business" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/BusinessClass
+:BusinessClass rdf:type owl:Class ;
+               rdfs:subClassOf :SeatType ;
+               rdfs:comment "Business class" ;
+               rdfs:label "BusinessClass" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :Passenger ;
+         rdfs:comment "Country of nationality of the passenger" ;
+         rdfs:label "Country" ;
+         rdfs:sameAs "https://dbpedia.org/page/Country" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/CoupleLeisure
+:CoupleLeisure rdf:type owl:Class ;
+               rdfs:subClassOf :TravellerType ;
+               rdfs:comment "Couple leisure" ;
+               rdfs:label "CoupleLeisure" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/DateFlown
+:DateFlown rdf:type owl:Class ;
+           rdfs:subClassOf :Trip ;
+           rdfs:comment "Date of the trip" ;
+           rdfs:label "DateFlown" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/DatePublished
+:DatePublished rdf:type owl:Class ;
+               rdfs:subClassOf :Review ;
+               rdfs:comment "Publication date of the review" ;
+               rdfs:label "Date" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Destination
+:Destination rdf:type owl:Class ;
+             rdfs:subClassOf :Trip ;
+             rdfs:comment "Arrival of the flight" ;
+             rdfs:label "Destination" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/EconomyClass
+:EconomyClass rdf:type owl:Class ;
+              rdfs:subClassOf :SeatType ;
+              rdfs:comment "Economy class" ;
+              rdfs:label "EconomyClass" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/FaimilyLeisure
+:FaimilyLeisure rdf:type owl:Class ;
+                rdfs:subClassOf :TravellerType ;
+                rdfs:comment "Family leisure" ;
+                rdfs:label "FamilyLeisure" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/FirstClass
+:FirstClass rdf:type owl:Class ;
+            rdfs:subClassOf :SeatType ;
+            rdfs:comment "First class" ;
+            rdfs:label "FirstClass" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Origin
+:Origin rdf:type owl:Class ;
+        rdfs:subClassOf :Trip ;
+        rdfs:comment "Departure of the flight" ;
+        rdfs:label "Origin" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Passenger
+:Passenger rdf:type owl:Class ;
+           rdfs:comment "Person who is traveling" ;
+           rdfs:label "Passenger" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Poor
+:Poor rdf:type owl:Class ;
+      rdfs:subClassOf :Rating ;
+      rdfs:comment "Rating is poor" ;
+      rdfs:label "PoorRating" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Rating
+:Rating rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasRating ;
+                              owl:someValuesFrom xsd:integer
+                            ] ;
+        rdfs:subClassOf :Review ;
+        rdfs:comment "Numerical evaluation of the review" ;
+        rdfs:label "Rating" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasPassenger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Passenger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasTrip ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Trip
+                        ] ;
+        rdfs:comment "Feedback of the trip provided by the passenger" ;
+        rdfs:label "Review" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/SeatType
+:SeatType rdf:type owl:Class ;
+          rdfs:subClassOf :Trip ;
+          rdfs:comment "Type of seat" ;
+          rdfs:label "SeatType" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/SoloLeisure
+:SoloLeisure rdf:type owl:Class ;
+             rdfs:subClassOf :TravellerType ;
+             rdfs:comment "Solo leisure" ;
+             rdfs:label "SoloLeisure" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/TravellerType
+:TravellerType rdf:type owl:Class ;
+               rdfs:subClassOf :Passenger ;
+               rdfs:comment "Type of traveller" ;
+               rdfs:label "TravellerType" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Trip
+:Trip rdf:type owl:Class ;
+      rdfs:comment "Flight took by a passenger" ;
+      rdfs:label "Trip" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/boeing
+:boeing rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/passenger1
+:passenger1 rdf:type owl:NamedIndividual ,
+                     :Passenger .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/qatar_airways
+:qatar_airways rdf:type owl:NamedIndividual ,
+                        :Airlane .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/review1
+:review1 rdf:type owl:NamedIndividual ,
+                  :Review ;
+         :hasPassenger :passenger1 ;
+         :hasTrip :trip1 ;
+         :hasComment "Text of review1" ;
+         :hasRating 9 ;
+         :hasTitle "true"^^xsd:boolean ;
+         :isRecommended "Title of review1" .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/ryanair
+:ryanair rdf:type owl:NamedIndividual ,
+                  :Airlane .
+
+
+###  http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/trip1
+:trip1 rdf:type owl:NamedIndividual ,
+                :Trip ;
+       :hasAircraft :boeing ;
+       :hasAirlaine :ryanair ;
+       :isVerified "true"^^xsd:boolean .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Business
+                :CoupleLeisure
+                :SoloLeisure
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BusinessClass
+                :EconomyClass
+                :FirstClass
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#h> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Rating ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                  <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                               rdf:first <urn:swrl:var#h> ;
+                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                          rdf:first 5 ;
+                                                                                                                          rdf:rest rdf:nil
+                                                                                                                        ]
+                                                                                                             ]
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#h> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 8 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRating ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#h>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :AverageRating ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Rating ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                  <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                               rdf:first <urn:swrl:var#h> ;
+                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                          rdf:first 8 ;
+                                                                                                                          rdf:rest rdf:nil
+                                                                                                                        ]
+                                                                                                             ]
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRating ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#h>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/laia.subirats/ontologies/2021/2/toy-tennis-ontology#Average> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Rating ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                  <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                               rdf:first <urn:swrl:var#h> ;
+                                                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                                                          rdf:first 5 ;
+                                                                                                                          rdf:rest rdf:nil
+                                                                                                                        ]
+                                                                                                             ]
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRating ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#r> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#h>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Poor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#h>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,124 @@
+{
+  "@context" : {
+    "hasTitle" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasTitle",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "FaimilyLeisure" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/FaimilyLeisure"
+    },
+    "hasRating" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasRating",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Review" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Review"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license"
+    },
+    "Country" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Country"
+    },
+    "hasAircraft" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasAircraft",
+      "@type" : "@id"
+    },
+    "Poor" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Poor"
+    },
+    "isRecommended" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/isRecommended",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "DatePublished" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/DatePublished"
+    },
+    "CoupleLeisure" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/CoupleLeisure"
+    },
+    "hasComment" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasComment",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Average" : {
+      "@id" : "http://www.semanticweb.org/laia.subirats/ontologies/2021/2/toy-tennis-ontology#Average"
+    },
+    "Destination" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Destination"
+    },
+    "Origin" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Origin"
+    },
+    "FirstClass" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/FirstClass"
+    },
+    "DateFlown" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/DateFlown"
+    },
+    "Business" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Business"
+    },
+    "Airlane" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Airlane"
+    },
+    "AverageRating" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/AverageRating"
+    },
+    "Passenger" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Passenger"
+    },
+    "isVerified" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/isVerified",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Rating" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Rating"
+    },
+    "hasTrip" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasTrip",
+      "@type" : "@id"
+    },
+    "hasAirlaine" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasAirlaine",
+      "@type" : "@id"
+    },
+    "Aircraft" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Aircraft"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "EconomyClass" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/EconomyClass"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "Trip" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/Trip"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "SoloLeisure" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/SoloLeisure"
+    },
+    "BusinessClass" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/BusinessClass"
+    },
+    "SeatType" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/SeatType"
+    },
+    "hasPassenger" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/hasPassenger",
+      "@type" : "@id"
+    },
+    "TravellerType" : {
+      "@id" : "http://www.semanticweb.org/violeta/ontologies/2024/3/airlines-reviews-ontology/TravellerType"
+    }
+  }
+}

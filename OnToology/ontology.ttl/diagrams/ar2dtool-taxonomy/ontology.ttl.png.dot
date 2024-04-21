@@ -1,0 +1,24 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "base:FaimilyLeisure" "base:SoloLeisure" "base:Destination" "base:FirstClass" "http://www.semanticweb.org/laia.subirats/ontologies/2021/2/toy-tennis-ontology#Average" "base:BusinessClass" "base:Poor" "base:Origin" "base:EconomyClass" "base:DatePublished" "base:CoupleLeisure" "base:Trip" "base:AverageRating" "base:Review" "base:SeatType" "base:TravellerType" "base:Passenger" "base:DateFlown" "base:Business" "base:Rating" "base:Country" ; /*classes style*/
+	"base:AverageRating" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:BusinessClass" -> "base:SeatType" [ label = "rdfs:subClassOf" ];
+	"base:Country" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+	"base:DatePublished" -> "base:Review" [ label = "rdfs:subClassOf" ];
+	"base:FaimilyLeisure" -> "base:TravellerType" [ label = "rdfs:subClassOf" ];
+	"base:Origin" -> "base:Trip" [ label = "rdfs:subClassOf" ];
+	"base:SoloLeisure" -> "base:TravellerType" [ label = "rdfs:subClassOf" ];
+	"base:CoupleLeisure" -> "base:TravellerType" [ label = "rdfs:subClassOf" ];
+	"base:EconomyClass" -> "base:SeatType" [ label = "rdfs:subClassOf" ];
+	"base:Business" -> "base:TravellerType" [ label = "rdfs:subClassOf" ];
+	"base:FirstClass" -> "base:SeatType" [ label = "rdfs:subClassOf" ];
+	"base:Rating" -> "base:Review" [ label = "rdfs:subClassOf" ];
+	"base:Destination" -> "base:Trip" [ label = "rdfs:subClassOf" ];
+	"base:TravellerType" -> "base:Passenger" [ label = "rdfs:subClassOf" ];
+	"base:DateFlown" -> "base:Trip" [ label = "rdfs:subClassOf" ];
+	"http://www.semanticweb.org/laia.subirats/ontologies/2021/2/toy-tennis-ontology#Average" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:Poor" -> "base:Rating" [ label = "rdfs:subClassOf" ];
+	"base:SeatType" -> "base:Trip" [ label = "rdfs:subClassOf" ];
+
+}
